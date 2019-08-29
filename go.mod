@@ -1,4 +1,4 @@
-module go-python3
+module github.com/0to1/go-python3
 
 go 1.12
 
