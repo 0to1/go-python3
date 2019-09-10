@@ -207,6 +207,10 @@ func Py_GetBuildInfo() string {
 
 //PySys_SetArgvEx : https://docs.python.org/3/c-api/init.html#c.PySys_SetArgvEx
 func PySys_SetArgvEx(args []string, updatepath bool) error {
+	if len(args) == 0 {
+		return nil
+	}
+	
 	argc := C.int(len(args))
 	argv := make([]*C.wchar_t, argc, argc)
 	for i, arg := range args {
@@ -234,6 +238,10 @@ func PySys_SetArgvEx(args []string, updatepath bool) error {
 
 //PySys_SetArgv : https://docs.python.org/3/c-api/init.html#c.PySys_SetArgv
 func PySys_SetArgv(args []string) error {
+	if len(args) == 0 {
+		return nil
+	}
+
 	argc := C.int(len(args))
 	argv := make([]*C.wchar_t, argc, argc)
 	for i, arg := range args {
