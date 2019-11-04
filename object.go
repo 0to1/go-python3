@@ -38,6 +38,9 @@ var Py_None = togo(C.Py_None)
 //PyObject : https://docs.python.org/3/c-api/structures.html?highlight=pyobject#c.PyObject
 type PyObject C.PyObject
 
+//PyFrameObject : https://docs.python.org/3/c-api/veryhigh.html#c.PyFrameObject
+type PyFrameObject C.PyFrameObject
+
 //IncRef : https://docs.python.org/3/c-api/refcounting.html#c.Py_INCREF
 func (pyObject *PyObject) IncRef() {
 	C.Py_IncRef(toc(pyObject))

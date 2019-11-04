@@ -20,3 +20,12 @@ func togo(cobject *C.PyObject) *PyObject {
 func toc(object *PyObject) *C.PyObject {
 	return (*C.PyObject)(object)
 }
+
+//framectogo converts a *C.PyFrameObject to a *PyFrameObject
+func framectogo(cobject *C.PyFrameObject) *PyFrameObject {
+	return (*PyFrameObject)(cobject)
+}
+
+func framegotoc(object *PyFrameObject) *C.PyFrameObject {
+	return (*C.PyFrameObject)(object)
+}

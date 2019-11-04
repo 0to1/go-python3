@@ -32,6 +32,14 @@ func PyEval_GetFuncName(pyFunc *PyObject) string {
 	return C.GoString(C.PyEval_GetFuncName(toc(pyFunc)))
 }
 
+func PyEval_GetFrame() *PyFrameObject {
+	return framectogo(C.PyEval_GetFrame())
+}
+
+func PyFrame_GetLineNumber(frame *PyFrameObject) int {
+	return C.PyFrame_GetLineNumber(framegotoc(frame))
+}
+
 //PyEval_GetFuncDesc : https://docs.python.org/3/c-api/reflection.html?highlight=reflection#c.PyEval_GetFuncDesc
 func PyEval_GetFuncDesc(pyFunc *PyObject) string {
 	return C.GoString(C.PyEval_GetFuncDesc(toc(pyFunc)))
