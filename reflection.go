@@ -9,6 +9,7 @@ package python3
 
 /*
 #include "Python.h"
+#include "frameobject.h"
 */
 import "C"
 

@@ -11,6 +11,7 @@ package python3
 
 /*
 #include "Python.h"
+#include "frameobject.h"
 #include "macro.h"
 #include "variadic.h"
 */
