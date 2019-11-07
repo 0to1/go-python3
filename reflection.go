@@ -38,7 +38,7 @@ func PyEval_GetFrame() *PyFrameObject {
 }
 
 func PyFrame_GetLineNumber(frame *PyFrameObject) int {
-	return C.PyFrame_GetLineNumber(framegotoc(frame))
+	return int(C.PyFrame_GetLineNumber(framegotoc(frame)))
 }
 
 //PyEval_GetFuncDesc : https://docs.python.org/3/c-api/reflection.html?highlight=reflection#c.PyEval_GetFuncDesc
