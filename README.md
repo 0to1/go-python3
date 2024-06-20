@@ -1,5 +1,8 @@
-go-python3
-==========
+**This repo will be archived on December 1st 2021. While still readable it will no longer be maintained.** There's a community maintained successor of this project at https://github.com/go-python/cpy3 .
+
+# go-python3
+
+**Currently supports python-3.7 only.**
 
 Golang bindings for the C-API of CPython-3.
 
@@ -8,23 +11,26 @@ This package provides a ``go`` package named "python" under which most of the
 exposed. Theoretically, you should be able use https://docs.python.org/3/c-api
 and know what to type in your ``go`` program.
 
-Currently supports python-3.7+.
 
 This project was inspired by https://github.com/sbinet/go-python. Go and take a look if we need something for python-2.7!
 
-Install
--------
+# Install
 
-Simply `go get github.com/DataDog/go-python3`
+## Deps
 
+We will need `pkg-config` and a working `python3.7` environment to build these
+bindings. Make sure you have Python libraries and header files installed as
+well (`python3.7-dev` on Debian or `python3-devel` on Centos for example)..
 
-Build
------
+By default `pkg-config` will look at the `python3` library so if you want to
+choose a specific version just symlink `python-X.Y.pc` to `python3.pc` or use
+the `PKG_CONFIG_PATH` environment variable.
 
-We will need `pkg-config` and a working `python3` environment to build these bindings. By default `pkg-config` will look at the `python3` library so if you want to choose a specific version just symlink `python-X.Y.pc` to `python3.pc` or use the `PKG_CONFIG_PATH` environment variable.
+## Go get
 
-API
----
+Then simply `go get github.com/DataDog/go-python3`
+
+# API
 
 Some functions mix go code and call to Python function. Those functions will
 return and `int` and `error` type. The `int` represent the Python result code
